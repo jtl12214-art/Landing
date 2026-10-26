@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+<div class="container">
+    <div class="nav-container d-flex">
+    <div class="iogo">
+    <h4>STASH</h4>
+    </div>
+    <div class="menu d-flex">
+    <ul class="nav d-flex">
+        <li><a href="#">서비스 소개</a></li>
+<li><a href="#">이용방법</a></li>
+<li><a href="#">활용방법</a></li>
+<li><a href="#">STASH APP</a></li>
+</ul>
+<div class="nav-btn-content">
+<a href="#" class="nav-btn">보관 시작하기</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-text">
+<h1>물건은 맡기고,<br>
+공간은 내 곁에 남기세요.</h1>
+<p>STASH는 자주 쓰지 않는 짐을 집 앞에서 픽업해 안전하게 보관하고,<br> 필요할 때 다시 보내주는 스마트 짐 보관 서비스입니다.</p>
+</div>
+<div class="hero-btn-content">
+<ul class="hero-btn">
+<li><button class="pick-btn">무료 픽업 신청하기</button></li>
+<li>
+<button class="user-btn">이용 방법 보기</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+</section> 
+<!-- 1P END -->
+<!-- 1P START -->
+
+<section class="before-after">
+    <div class="container">
+
+        <div class="before-after-text">
+            <span class="section-label">STORAGE SOLUTION</span>
+
+            <h2>
+                늘 부족했던 건<br>
+                집이 아니라 공간이었습니다.
+            </h2>
+
+            <p>계절마다 사용하는 물건은 달라지지만 우리 집의 수납공간은 그대로입니다.</p>
+        </div>
+
+        <div class="compare-card">
+
+        <div class="compare-image" id="space-compare">
+            <img
+                class="compare-after"
+                src="assets/image/P2. 에프터 2.jpg"
+                alt="짐을 보관한 뒤 여유 공간이 생긴 드레스룸"
+                draggable="false">
+            <img class="compare-before"
+            src="assets/image/P2. 비포 2.jpg"
+            alt="계절 용품과 짐이 놓여 있는 보관 전 드레스룸"
+            draggable="false">
+
+            <span class="compare-label label-before">
+                Before - 계절짐으로 가득한 공간
+            </span>
+
+            <span class="compare-label label-after">
+                After - STASH로 비워진 공간
+            </span>
+
+<div class="compare-divider" aria-hidden="true">
+    <span>
+        <svg width="36" height="14" viewBox="0 0 36 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <path
+                d="M8 2L2 7L8 12"
+                stroke="#1E6B57"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+
+            <path
+                d="M28 2L34 7L28 12"
+                stroke="#1E6B57"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+
+        </svg>
+    </span>
+</div>
+
+            <input
+                    class="compare-range"
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    value="50"
+                    aria-label="보관 전 이미지가 보이는 비율"
+                    aria-valuetext="보관 전 50%, 보관 후 50%">
+            </div>
+
+            <div class="compare-caption">
+                <p>같은 집, 더 넓어진 생활.</p>
+                <span>좌우로 슬라이더를 밀어 변화를 확인해보세요 →</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const compare = document.querySelector("#space-compare");
+    const slider = compare.querySelector(".compare-range");
+
+    slider.addEventListener("input", function () {
+        const before = Number(slider.value);
+        const after = 100 - before;
+
+        compare.style.setProperty("--position", before + "%");
+
+        slider.setAttribute(
+            "aria-valuetext",
+            "보관 전 " + before + "%, 보관 후 " + after + "%"
+        );
+    });
+    
+</script>
+
+<!-- 2P END -->
+
+<!-- 3P START -->
+
+<section class="storage-options">
+    <div class="container">
+
+        <div class="storage-options-text">
+            <span class="section-label">STORAGE OPTIONS</span>
+
+            <h2>필요한 만큼, 필요한 방식으로 맡기세요.</h2>
+
+            <p>
+                라이프스타일에 맞춘 2가지 전용 솔루션,
+                물품의 성격에 최적화된 전문 환경을 제공합니다.
+            </p>
+        </div>
+
+
+        <div class="storage-card-list">
+
+            <!-- 공간 보관 -->
+            <a href="#space-plan" class="storage-card">
+
+                <div class="storage-card-text">
+                    <span class="storage-card-label">
+                        01 / SPACE STORAGE
+                    </span>
+
+                    <h3>공간 보관</h3>
+
+                    <p>
+                        캐리어, 캠핑 장비, 계절 가전, 리빙박스까지.<br>
+                        짐의 부피와 크기에 딱 맞는 전용 프리미엄 공간에 깔끔하게 수납합니다.
+                    </p>
+
+                    <ul class="storage-tags">
+                        <li>#선반수납</li>
+                        <li>#리빙박스</li>
+                    </ul>
+                </div>
+
+                <div class="storage-card-image">
+                    <img
+                        src="assets/image/공간보관 - P3.jpg"
+                        alt="STASH 공간 보관 시설">
+                </div>
+
+                <div class="storage-card-bottom">
+                    <span>S · M · L · XL 4단계 공간 규격</span>
+
+                <span class="storage-card-link">
+                공간 규격 &amp; 요금 보기 →
+                </span>
+                </div>
+
+            </a>
+
+
+            <!-- 의류 보관 -->
+                <a href="#garment-plan" class="storage-card">
+
+                <div class="storage-card-text">
+                    <span class="storage-card-label">
+                        02 / GARMENT CARE
+                    </span>
+
+                    <h3>의류 보관</h3>
+
+                    <p>
+                        패딩, 울코트, 고급 가죽 수트를 구김 없이.<br>
+                        접지 않고 전용 원목 옷걸이에 걸어 365일 최적 공조 시스템으로 케어합니다.
+                    </p>
+
+                    <ul class="storage-tags">
+                        <li>#롱패딩·다운</li>
+                        <li>#캐시미어코트</li>
+                    </ul>
+                </div>
+
+                <div class="storage-card-image">
+                    <img
+                        src="assets/image/의류보관 - P3.jpg"
+                        alt="STASH 의류 보관 시설">
+                </div>
+
+                <div class="storage-card-bottom">
+                    <span>G30 · G60 · G100 행거 플랜</span>
+
+                <span class="storage-card-link">
+                    의류 보관 플랜 보기 →
+                </span>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 3P END -->
+<!-- 4P START -->
+<section class="space-plan" id="space-plan">
+    <div class="container space-plan-layout">
+
+        <div class="space-plan-image">
+            <img
+                src="assets/image/4P. 공간보관 상세.png"
+                alt="S, M, L, XL 크기별 공간 보관 시설"
+                loading="lazy">
+        </div>
+
+        <div class="space-plan-content">
+
+            <div class="space-plan-text">
+                <span class="section-label">SPACE PLAN &amp; PRICING</span>
+                <h2>내 짐의 양에 맞는 공간.</h2>
+                <p>실측 규격과 평수만으로 명확하게 선택하세요.</p>
+            </div>
+
+            <ul class="space-plan-list">
+
+                <li class="space-plan-row">
+                    <h3 class="plan-size">S</h3>
+
+                    <div class="plan-detail">
+                        <strong>약 0.54평</strong>
+                        <p>120 × 150 × 220cm</p>
+                    </div>
+
+                    <p class="plan-price">
+                        <span>월</span>
+                        <strong>29,900</strong>원
+                    </p>
+
+                    <button type="button" class="plan-select"
+                            aria-label="S 공간 선택">
+                        선택
+                    </button>
+                </li>
+
+                <li class="space-plan-row is-recommended">
+                    <h3 class="plan-size">M</h3>
+
+                    <div class="plan-detail">
+                        <strong>약 0.82평</strong>
+                        <p>
+                            150 × 180 × 220cm
+                            <span class="plan-badge">추천</span>
+                        </p>
+                    </div>
+
+                    <p class="plan-price">
+                        <span>월</span>
+                        <strong>54,900</strong>원
+                    </p>
+
+                    <button type="button" class="plan-select"
+                            aria-label="M 공간 선택">
+                        선택
+                    </button>
+                </li>
+
+                <li class="space-plan-row">
+                    <h3 class="plan-size">L</h3>
+
+                    <div class="plan-detail">
+                        <strong>약 1.21평</strong>
+                        <p>200 × 200 × 220cm</p>
+                    </div>
+
+                    <p class="plan-price">
+                        <span>월</span>
+                        <strong>109,000</strong>원
+                    </p>
+
+                    <button type="button" class="plan-select"
+                            aria-label="L 공간 선택">
+                        선택
+                    </button>
+                </li>
+
+                <li class="space-plan-row">
+                    <h3 class="plan-size">XL</h3>
+
+                    <div class="plan-detail">
+                        <strong>약 2.72평</strong>
+                        <p>300 × 300 × 220cm</p>
+                    </div>
+
+                    <p class="plan-price">
+                        <span>월</span>
+                        <strong>219,000</strong>원
+                    </p>
+
+                    <button type="button" class="plan-select"
+                            aria-label="XL 공간 선택">
+                        선택
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- 4P END -->
+
+<!-- 5P START -->
+
+<section class="garment-plan" id="garment-plan">
+    <div class="container">
+
+        <div class="garment-plan-content">
+
+            <!-- 왼쪽 -->
+            <div class="garment-plan-info">
+
+                <div class="garment-plan-text">
+                    <span class="section-label">
+                        GARMENT PLAN &amp; PRICING
+                    </span>
+
+                    <h2>
+                        옷장 밖에서도 구김 없이.
+                    </h2>
+
+                    <p>
+                        행거 레일 폭 기준으로 아우터 수량에 맞춰 보관하세요.
+                    </p>
+                </div>
+
+
+                <!-- 가격 플랜 -->
+                <div class="garment-price-card">
+
+                    <!-- G30 -->
+                    <div class="garment-price-item">
+
+                        <strong class="garment-code">
+                            G30
+                        </strong>
+
+                        <div class="garment-size">
+                            <strong>레일 폭 30cm</strong>
+                            <span>롱패딩 약 3벌</span>
+                        </div>
+
+                        <div class="garment-price">
+                            <span>월</span>
+                            <strong>19,900</strong>
+                            <span>원</span>
+                        </div>
+
+                        <button class="garment-select-btn">
+                            선택
+                        </button>
+
+                        <div class="garment-progress">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- G60 -->
+                    <div class="garment-price-item garment-price-item-active">
+
+                        <strong class="garment-code">
+                            G60
+                        </strong>
+
+                        <div class="garment-size">
+
+                            <div class="garment-size-title">
+                                <strong>레일 폭 60cm</strong>
+                                <span class="recommend-badge">추천</span>
+                            </div>
+
+                            <span>롱패딩 약 6벌</span>
+
+                        </div>
+
+                        <div class="garment-price">
+                            <span>월</span>
+                            <strong>35,900</strong>
+                            <span>원</span>
+                        </div>
+
+                        <button class="garment-select-btn">
+                            선택
+                        </button>
+
+                        <div class="garment-progress">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- G100 -->
+                    <div class="garment-price-item">
+
+                        <strong class="garment-code">
+                            G100
+                        </strong>
+
+                        <div class="garment-size">
+                            <strong>레일 폭 100cm</strong>
+                            <span>롱패딩 약 10벌</span>
+                        </div>
+
+                        <div class="garment-price">
+                            <span>월</span>
+                            <strong>59,900</strong>
+                            <span>원</span>
+                        </div>
+
+                        <button class="garment-select-btn">
+                            선택
+                        </button>
+
+                        <div class="garment-progress">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 오른쪽 -->
+            <div class="garment-plan-image">
+                <img
+                    src="assets/image/5P. 의류보관 상세.jpg"
+                    alt="G30 G60 G100 의류 보관 공간">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 5P END -->
+<!-- 6P START -->
+
+<section class="storage-care">
+
+    <div class="container">
+
+        <!-- 6P 상단 -->
+        <div class="storage-care-header">
+
+            <div class="storage-care-text">
+                <span class="section-label">STORAGE &amp; CARE</span>
+
+                <h2>
+                    내 소중한 물건이 머무는 곳까지,<br>
+                    안심할 수 있도록.
+                </h2>
+
+                <p>
+                    온도, 습도, 보안까지 세심하게 관리해<br>
+                    보관 기간 동안 안정적인 상태를 유지합니다.
+                </p>
+            </div>
+
+
+            <div class="care-status">
+                <span class="care-status-dot"></span>
+                <span>365일 스마트 환경 케어 시스템</span>
+            </div>
+
+        </div>
+
+
+        <!-- 6P 메인 -->
+        <div class="storage-care-content">
+
+            <!-- 왼쪽 카드 -->
+            <div class="care-card-list">
+
+                <!-- 온도 -->
+                <article class="care-card">
+
+                    <div class="care-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0Z"></path>
+                            <path d="M12 9v7"></path>
+                        </svg>
+                    </div>
+
+                    <div class="care-card-text">
+                        <h3>적정 온도 관리</h3>
+
+                        <strong>20~22℃ 유지</strong>
+
+                        <p>
+                            사계절 내내 급격한 온도 변화 없이
+                            보관 공간의 온도를 일정하게 유지합니다.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- 습도 -->
+                <article class="care-card">
+
+                    <div class="care-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11Z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="care-card-text">
+                        <h3>정밀 습도 관리</h3>
+
+                        <strong>습도 45~50% 유지</strong>
+
+                        <p>
+                            곰팡이와 녹 발생 걱정 없이 의류와 생활짐에
+                            가장 적절한 습도를 유지합니다.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- 보안 -->
+                <article class="care-card">
+
+<div class="care-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+        <path d="M8 10V7a4 4 0 0 1 7.5-2"></path>
+        <path d="m9 15 2 2 4-4"></path>
+    </svg>
+</div>
+
+                    <div class="care-card-text">
+                        <h3>출입 / 보안 관리</h3>
+
+                        <strong>24시간 CCTV 모니터링</strong>
+
+                        <p>
+                            다중 출입 통제와 실시간 시설 모니터링으로
+                            안심할 수 있는 보관 환경을 제공합니다.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- 오른쪽 이미지 -->
+            <div class="storage-care-visual">
+
+                <img
+                    src="assets/image/6P. 창고 복도.png"
+                    alt="STASH 보관 시설 내부">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 6P END -->
+<!-- 7P START -->
+
+<section class="mobile-app">
+
+    <div class="container">
+
+        <div class="mobile-app-layout">
+
+
+            <div class="mobile-app-content">
+
+                <span class="mobile-app-label">
+                    SMART MOBILE PLATFORM
+                </span>
+
+                <h2>
+                    맡기고, 확인하고,<br>
+                    다시 받는 것까지.<br>
+                    <strong>손안에서 스마트하게.</strong>
+                </h2>
+
+                <p class="mobile-app-desc">
+                    복잡한 전화 상담이나 방문 예약 없이,
+                    앱 하나로 문 앞 픽업부터 보관 품목 확인,<br>
+                    재배송 신청까지 터치 몇 번으로 완료됩니다.
+                </p>
+
+
+                <ul class="mobile-app-feature-list">
+
+                    <li class="mobile-app-feature">
+
+                        <span class="feature-number">01</span>
+
+                        <div class="feature-text">
+                            <h3>비대면 픽업 예약</h3>
+
+                            <p>
+                                원하는 날짜와 시간을 지정하면
+                                담당 기사가 문 앞까지 직접 방문합니다.
+                            </p>
+                        </div>
+
+                    </li>
+
+
+                    <li class="mobile-app-feature">
+
+                        <span class="feature-number">02</span>
+
+                        <div class="feature-text">
+                            <h3>보관 현황 확인</h3>
+
+                            <p>
+                                이용 중인 공간보관·의류보관 상품과 사용량,
+                                남은 공간을 한눈에 확인합니다.
+                            </p>
+                        </div>
+
+                    </li>
+
+
+                    <li class="mobile-app-feature">
+
+                        <span class="feature-number">03</span>
+
+                        <div class="feature-text">
+                            <h3>보관 환경 확인</h3>
+
+                            <p>
+                                내 물건이 보관된 구역의 온도와 습도 상태를
+                                실시간으로 확인합니다.
+                            </p>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="mobile-app-phone">
+
+                <img
+                    src="assets/image/7P. 스마트폰.png"
+                    alt="STASH 모바일 앱 보관 현황 화면">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 7P END -->
+<!-- 8P START -->
+
+<!-- 8P START -->
+
+<section class="delivery-return">
+
+    <div class="container">
+
+        <div class="delivery-return-layout">
+
+            <!-- 왼쪽 -->
+            <div class="delivery-return-content">
+
+                <span class="section-label">
+                    DELIVERY &amp; RETURN
+                </span>
+
+                <h2>
+                    보관소까지 갈 필요 없이,<br>
+                    문 앞에서 맡기고 다시 받으세요.
+                </h2>
+
+                <p class="delivery-return-desc">
+                    원하는 날짜에 맡기고,<br>
+                    필요한 물건만 다시 받아보세요.
+                </p>
+
+
+                <ul class="delivery-benefit-list">
+
+                    <li class="delivery-benefit">
+                        <h3>
+                            <span class="delivery-dot"></span>
+                            월 1~3회 무료
+                        </h3>
+
+                        <p>
+                            상품별 제공 횟수 안에서 픽업과 재배송을 이용할 수 있습니다.
+                        </p>
+                    </li>
+
+
+                    <li class="delivery-benefit">
+                        <h3>
+                            <span class="delivery-dot"></span>
+                            필요한 물건만 선택
+                        </h3>
+
+                        <p>
+                            전체 보관품을 꺼낼 필요 없이 필요한 물건만 다시 받을 수 있습니다.
+                        </p>
+                    </li>
+
+
+                    <li class="delivery-benefit">
+                        <h3>
+                            <span class="delivery-dot"></span>
+                            왕복 기준으로 명확하게
+                        </h3>
+
+                        <p>
+                            제공 횟수 안에서는 별도의 추가 배송비 부담 없이 이용합니다.
+                        </p>
+                    </li>
+
+                </ul>
+
+
+                <div class="delivery-care-badge">
+                    <span>✓</span>
+                    집 ↔ STASH 비대면 &amp; 대면 안심 픽업 케어
+                </div>
+
+            </div>
+
+
+            <!-- 오른쪽 -->
+            <div class="delivery-return-visual">
+
+                <img
+                    src="assets/image/8P. 배송 서비스.jpg"
+                    alt="고객의 집 앞에서 물품을 전달하는 STASH 직원">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 8P END -->
+<!-- 9P START -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="final-cta-content">
+
+            <span class="final-cta-label">
+                <span></span>
+                START LIVING WITH SPACE
+            </span>
+
+
+            <h2>
+                집은 그대로.<br>
+                공간은 더 넓게.
+            </h2>
+
+
+            <p class="final-cta-desc">
+                자주 사용하지 않는 물건은 STASH에 안심하고 맡기고,<br>
+                비워진 자리에서 시작되는 쾌적한 주거의 여유를 오늘 바로 만나보세요.
+            </p>
+
+
+            <div class="final-cta-buttons">
+
+                <a href="#" class="final-cta-primary">
+                    공간 넓히기
+                </a>
+
+                <a href="#space-plan" class="final-cta-secondary">
+                    내게 맞는 보관 찾기
+                </a>
+
+            </div>
+
+
+            <ul class="final-cta-benefits">
+
+                <li>
+                    <span>✓</span>
+                    비대면 문 앞 픽업
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    24시간 항온·항습 케어
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    월 무료 재배송 혜택
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 9P END -->
+<!-- FOOTER START -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <!-- 왼쪽 -->
+            <div class="footer-brand">
+
+                <h2>STASH</h2>
+
+                <div class="footer-customer">
+                    <p>고객센터 1588-7070</p>
+                    <p>평일 10:00 - 18:00</p>
+                    <p>주말 및 공휴일 휴무</p>
+                </div>
+
+            </div>
+
+
+            <!-- 가운데 -->
+            <div class="footer-policy">
+
+                <h3>이용 및 정책</h3>
+
+                <ul>
+                    <li>
+                        <a href="#">이용약관</a>
+                    </li>
+
+                    <li>
+                        <a href="#">개인정보처리방침</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- 오른쪽 -->
+            <div class="footer-download">
+
+                <h3>앱 다운로드</h3>
+
+                <div class="footer-store-buttons">
+
+                    <a href="#" class="footer-store-btn">
+                        App Store
+                    </a>
+
+                    <a href="#" class="footer-store-btn">
+                        Google Play
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 하단 -->
+        <div class="footer-bottom">
+
+            <p class="footer-company">
+                (주)스테시스토리지 · 대표이사: 유승준 ·
+                사업자등록번호: 177-45-71717 ·
+                서울특별시 강남구 테헤란로 2027
+            </p>
+
+            <p class="footer-copyright">
+                © 2027 STASH Inc. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- FOOTER END -->
+
+
+</body>
+</html>
+
+
