@@ -23,7 +23,7 @@
 <li><a href="#">STASH APP</a></li>
 </ul>
 <div class="nav-btn-content">
-<a href="#" class="nav-btn">보관 시작하기</a>
+<a href="#" class="nav-btn">무료 픽업 신청</a>
 </div>
 </div>
 </div>
@@ -42,7 +42,7 @@
 <ul class="hero-btn">
 <li><button class="pick-btn">무료 픽업 신청하기</button></li>
 <li>
-<button class="user-btn">이용 방법 보기</button>
+<a href="#storage-options" class="user-btn">이용 방법 보기</a>
 </li>
 </ul>
 </div>
@@ -121,9 +121,9 @@
                     min="0"
                     max="100"
                     step="0.01"
-                    value="50"
+                    value="95"
                     aria-label="보관 전 이미지가 보이는 비율"
-                    aria-valuetext="보관 전 50%, 보관 후 50%">
+                    aria-valuetext="보관 전 95%, 보관 후 5%">
             </div>
 
             <div class="compare-caption">
@@ -136,28 +136,117 @@
 </section>
 
 <script>
-    const compare = document.querySelector("#space-compare");
-    const slider = compare.querySelector(".compare-range");
+    (function () {
+        const compare = document.querySelector("#space-compare");
+        if (!compare) return;
+        const slider = compare.querySelector(".compare-range");
+        if (!slider) return;
 
-    slider.addEventListener("input", function () {
-        const before = Number(slider.value);
-        const after = 100 - before;
+        let hasPlayed = false;
+        let animationFrameId = null;
 
-        compare.style.setProperty("--position", before + "%");
+        function updateSlider(val) {
+            const before = Math.min(100, Math.max(0, val));
+            const after = 100 - before;
+            compare.style.setProperty("--position", before + "%");
+            slider.value = before;
+            slider.setAttribute(
+                "aria-valuetext",
+                "보관 전 " + Math.round(before) + "%, 보관 후 " + Math.round(after) + "%"
+            );
+        }
 
-        slider.setAttribute(
-            "aria-valuetext",
-            "보관 전 " + before + "%, 보관 후 " + after + "%"
-        );
-    });
-    
+        // 초기 위치 95% 설정
+        updateSlider(95);
+
+        // 사용자가 슬라이더 조작 시 자동 애니메이션 중지 및 조작값 적용
+        function onUserInteraction() {
+            if (!hasPlayed) {
+                hasPlayed = true;
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            }
+            updateSlider(Number(slider.value));
+        }
+
+        slider.addEventListener("input", onUserInteraction);
+        slider.addEventListener("pointerdown", function () {
+            if (!hasPlayed) {
+                hasPlayed = true;
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            }
+        });
+
+        // 자동 시연: 약 95% -> 50%까지 1.2초 동안 자연스러운 ease-out으로 이동 후 정지
+        function playAutoDemonstration() {
+            if (hasPlayed) return;
+            hasPlayed = true;
+
+            const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            if (prefersReducedMotion) {
+                updateSlider(50);
+                return;
+            }
+
+            const startVal = 95;
+            const targetVal = 50;
+            const duration = 1200;
+            let startTime = null;
+
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutCubic(progress);
+                const currentVal = startVal + (targetVal - startVal) * eased;
+
+                updateSlider(currentVal);
+
+                if (progress < 1) {
+                    animationFrameId = requestAnimationFrame(step);
+                } else {
+                    updateSlider(targetVal);
+                    animationFrameId = null;
+                }
+            }
+
+            animationFrameId = requestAnimationFrame(step);
+        }
+
+        // IntersectionObserver로 이미지 영역이 viewport에 약 40~50% 들어오면 단 1회 시작
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                function (entries, obs) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting && !hasPlayed) {
+                            playAutoDemonstration();
+                            obs.disconnect();
+                        }
+                    });
+                },
+                { threshold: 0.45 }
+            );
+            observer.observe(compare);
+        } else {
+            playAutoDemonstration();
+        }
+    })();
 </script>
 
 <!-- 2P END -->
 
 <!-- 3P START -->
 
-<section class="storage-options">
+<section class="storage-options" id="storage-options">
     <div class="container">
 
         <div class="storage-options-text">
@@ -930,11 +1019,13 @@
                 <div class="footer-store-buttons">
 
                     <a href="#" class="footer-store-btn">
-                        App Store
+                        <img src="assets/image/apple.svg" alt="" aria-hidden="true">
+                        <span>App Store</span>
                     </a>
 
                     <a href="#" class="footer-store-btn">
-                        Google Play
+                        <img src="assets/image/google-play.svg" alt="" aria-hidden="true">
+                        <span>Google Play</span>
                     </a>
 
                 </div>
