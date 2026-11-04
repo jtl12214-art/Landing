@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보관 상담 신청 | STASH</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/consult.css">
+</head>
+<body>
+    <!-- HEADER START -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container d-flex">
+                <div class="iogo">
+                    <a href="index.html">
+                        <h4>STASH</h4>
+                    </a>
+                </div>
+                <div class="menu d-flex">
+                    <ul class="nav d-flex">
+                        <li><a href="index.html#storage-solution">서비스 소개</a></li>
+                        <li><a href="index.html#storage-options">이용방법</a></li>
+                        <li><a href="index.html#space-plan">활용방법</a></li>
+                        <li><a href="index.html#mobile-app">STASH APP</a></li>
+                    </ul>
+                    <div class="nav-btn-content">
+                        <a href="consult.html" class="nav-btn">상담 신청</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END -->
+
+    <main class="consult-page">
+        <div class="consult-container">
+
+            <!-- 타이틀 영역 -->
+            <section class="consult-hero">
+                <span class="consult-label">CONSULTATION</span>
+                <h1 class="consult-title">보관 상담 신청</h1>
+                <p class="consult-desc">
+                    보관이 필요한 물품과 원하는 방식을 알려주세요.<br>
+                    STASH가 알맞은 보관 방법을 안내해드립니다.
+                </p>
+            </section>
+
+            <!-- 폼 메인 영역 -->
+            <form id="consult-form" novalidate>
+
+                <!-- STEP 1: 보관 방식 및 플랜 선택 -->
+                <div class="consult-card">
+                    <h2 class="consult-step-title">
+                        <span class="step-num">1</span>
+                        보관 방식 및 플랜 선택
+                    </h2>
+
+                    <!-- 보관 방식 탭 카드 -->
+                    <div class="service-type-grid">
+                        <div class="service-type-card" id="card-space" data-type="space">
+                            <div class="service-type-header">
+                                <h3>공간 보관</h3>
+                                <span class="service-type-radio" aria-hidden="true"></span>
+                            </div>
+                            <p>캐리어, 캠핑 장비, 계절 가전, 리빙박스 등 부피에 맞춘 전용 공간 보관</p>
+                        </div>
+
+                        <div class="service-type-card" id="card-garment" data-type="garment">
+                            <div class="service-type-header">
+                                <h3>의류 보관</h3>
+                                <span class="service-type-radio" aria-hidden="true"></span>
+                            </div>
+                            <p>패딩, 코트, 수트 등 구김 없이 걸어서 365일 항온·항습 케어하는 전용 행거 보관</p>
+                        </div>
+                    </div>
+
+                    <!-- 플랜 선택 컨테이너 -->
+                    <div class="plan-container">
+                        <!-- 미선택 상태 안내 -->
+                        <div class="plan-guide-empty" id="plan-empty-guide">
+                            위의 <strong>공간 보관</strong> 또는 <strong>의류 보관</strong> 중 원하시는 방식을 선택해주세요.
+                        </div>
+
+                        <!-- 공간 보관 플랜 UI (S, M, L, XL) -->
+                        <div class="plan-section" id="section-space">
+                            <p class="plan-guide">내 짐의 양에 맞는 공간 크기를 선택해주세요.</p>
+                            <div class="plan-grid-4">
+                                <div class="plan-item" data-type="space" data-plan="S" data-name="공간 보관 · S" data-desc="약 0.54평 / 120×150×220cm" data-price="월 29,900원">
+                                    <div class="plan-item-code">S</div>
+                                    <div class="plan-item-spec">약 0.54평</div>
+                                    <div class="plan-item-sub">120 × 150 × 220cm</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>29,900</strong>원</div>
+                                </div>
+
+                                <div class="plan-item" data-type="space" data-plan="M" data-name="공간 보관 · M" data-desc="약 0.82평 / 150×180×220cm" data-price="월 54,900원">
+                                    <span class="plan-item-badge">추천</span>
+                                    <div class="plan-item-code">M</div>
+                                    <div class="plan-item-spec">약 0.82평</div>
+                                    <div class="plan-item-sub">150 × 180 × 220cm</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>54,900</strong>원</div>
+                                </div>
+
+                                <div class="plan-item" data-type="space" data-plan="L" data-name="공간 보관 · L" data-desc="약 1.21평 / 200×200×220cm" data-price="월 109,000원">
+                                    <div class="plan-item-code">L</div>
+                                    <div class="plan-item-spec">약 1.21평</div>
+                                    <div class="plan-item-sub">200 × 200 × 220cm</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>109,000</strong>원</div>
+                                </div>
+
+                                <div class="plan-item" data-type="space" data-plan="XL" data-name="공간 보관 · XL" data-desc="약 2.72평 / 300×300×220cm" data-price="월 219,000원">
+                                    <div class="plan-item-code">XL</div>
+                                    <div class="plan-item-spec">약 2.72평</div>
+                                    <div class="plan-item-sub">300 × 300 × 220cm</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>219,000</strong>원</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 의류 보관 플랜 UI (G30, G60, G100) -->
+                        <div class="plan-section" id="section-garment">
+                            <p class="plan-guide">보관할 아우터 수량에 맞춰 행거 레일 폭을 선택해주세요.</p>
+                            <div class="plan-grid-3">
+                                <div class="plan-item" data-type="garment" data-plan="G30" data-name="의류 보관 · G30" data-desc="레일 폭 30cm / 롱패딩 약 3벌" data-price="월 19,900원">
+                                    <div class="plan-item-code">G30</div>
+                                    <div class="plan-item-spec">레일 폭 30cm</div>
+                                    <div class="plan-item-sub">롱패딩 약 3벌</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>19,900</strong>원</div>
+                                </div>
+
+                                <div class="plan-item" data-type="garment" data-plan="G60" data-name="의류 보관 · G60" data-desc="레일 폭 60cm / 롱패딩 약 6벌" data-price="월 35,900원">
+                                    <span class="plan-item-badge">추천</span>
+                                    <div class="plan-item-code">G60</div>
+                                    <div class="plan-item-spec">레일 폭 60cm</div>
+                                    <div class="plan-item-sub">롱패딩 약 6벌</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>35,900</strong>원</div>
+                                </div>
+
+                                <div class="plan-item" data-type="garment" data-plan="G100" data-name="의류 보관 · G100" data-desc="레일 폭 100cm / 롱패딩 약 10벌" data-price="월 59,900원">
+                                    <div class="plan-item-code">G100</div>
+                                    <div class="plan-item-spec">레일 폭 100cm</div>
+                                    <div class="plan-item-sub">롱패딩 약 10벌</div>
+                                    <div class="plan-item-price"><span>월</span> <strong>59,900</strong>원</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: 고객 정보 입력 -->
+                <div class="consult-card">
+                    <h2 class="consult-step-title">
+                        <span class="step-num">2</span>
+                        고객 정보 입력
+                    </h2>
+
+                    <div class="form-grid-2">
+                        <!-- 이름 -->
+                        <div class="form-group">
+                            <label class="form-label" for="cust-name">
+                                이름<span class="req">*</span>
+                            </label>
+                            <input type="text" id="cust-name" class="form-control" placeholder="홍길동" required>
+                        </div>
+
+                        <!-- 연락처 -->
+                        <div class="form-group">
+                            <label class="form-label" for="cust-phone">
+                                연락처<span class="req">*</span>
+                            </label>
+                            <input type="tel" id="cust-phone" class="form-control" placeholder="010-0000-0000" maxlength="13" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <!-- 픽업 희망 지역 -->
+                        <div class="form-group">
+                            <label class="form-label" for="cust-region">
+                                픽업 희망 지역<span class="req">*</span>
+                            </label>
+                            <input type="text" id="cust-region" class="form-control" placeholder="예: 서울 성동구" required>
+                        </div>
+
+                        <!-- 픽업 희망 시기 -->
+                        <div class="form-group">
+                            <label class="form-label" for="cust-timing">
+                                픽업 희망 시기<span class="req">*</span>
+                            </label>
+                            <select id="cust-timing" class="form-control" required>
+                                <option value="">선택해주세요</option>
+                                <option value="최대한 빠르게">최대한 빠르게</option>
+                                <option value="1주 이내">1주 이내</option>
+                                <option value="2주 이내">2주 이내</option>
+                                <option value="날짜 협의">날짜 협의</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 보관 예정 물품 -->
+                    <div class="form-group">
+                        <label class="form-label" for="cust-items">
+                            보관 예정 물품<span class="req">*</span>
+                        </label>
+                        <textarea id="cust-items" class="form-control" rows="3" placeholder="예: 캐리어 2개, 캠핑용품, 겨울 패딩 등" required></textarea>
+                    </div>
+
+                    <!-- 추가 요청사항 -->
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label" for="cust-notes">
+                            추가 요청사항 (선택)
+                        </label>
+                        <textarea id="cust-notes" class="form-control" rows="3" placeholder="엘리베이터 유무, 희망 방문 시간대 등 요청사항이 있다면 자유롭게 적어주세요."></textarea>
+                    </div>
+
+                    <!-- 개인정보 수집 및 이용 동의 -->
+                    <div class="privacy-box">
+                        <label class="privacy-label" for="privacy-agree">
+                            <input type="checkbox" id="privacy-agree" required>
+                            <span>개인정보 수집 및 이용에 동의합니다. <strong style="color: #e11d48;">(필수)</strong></span>
+                        </label>
+                        <p class="privacy-subtext">
+                            수집 목적: 보관 상담 신청 확인 및 픽업 일정 안내 / 수집 항목: 이름, 연락처, 지역 / 보유 기간: 상담 완료 후 3개월
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 에러 안내 메시지 -->
+                <div class="form-error-msg" id="form-error-msg"></div>
+
+                <!-- STEP 3: 선택 요약 및 최종 신청 -->
+                <div class="consult-summary-card">
+                    <div class="summary-left">
+                        <span class="summary-title">선택한 서비스</span>
+                        <div class="summary-value" id="summary-value">서비스 및 플랜을 선택해주세요</div>
+                        <div class="summary-sub" id="summary-sub">상단의 보관 방식을 선택하시면 플랜 정보가 표시됩니다.</div>
+                    </div>
+                </div>
+
+                <!-- 제출 버튼 -->
+                <button type="submit" class="consult-submit-btn" id="submit-btn">
+                    상담 신청하기
+                </button>
+            </form>
+
+            <!-- 제출 완료 상태 화면 -->
+            <div class="consult-success-view" id="consult-success-view">
+                <div class="success-check-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h2 class="success-heading">상담 신청이 접수되었습니다.</h2>
+                <p class="success-message">
+                    입력하신 연락처를 통해 STASH 전문 매니저가<br>
+                    빠른 시일 내에 친절히 안내해드리겠습니다.
+                </p>
+
+                <div class="success-summary-box">
+                    <div class="success-summary-row">
+                        <span>선택 서비스</span>
+                        <strong id="result-service">-</strong>
+                    </div>
+                    <div class="success-summary-row">
+                        <span>신청자</span>
+                        <strong id="result-name">-</strong>
+                    </div>
+                    <div class="success-summary-row">
+                        <span>연락처</span>
+                        <strong id="result-phone">-</strong>
+                    </div>
+                    <div class="success-summary-row">
+                        <span>픽업 희망 지역</span>
+                        <strong id="result-region">-</strong>
+                    </div>
+                    <div class="success-summary-row">
+                        <span>픽업 희망 시기</span>
+                        <strong id="result-timing">-</strong>
+                    </div>
+                </div>
+
+                <a href="index.html" class="success-back-btn">홈으로 돌아가기</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>STASH</h2>
+                    <div class="footer-customer">
+                        <p>고객센터 1588-7070</p>
+                        <p>평일 10:00 - 18:00</p>
+                        <p>주말 및 공휴일 휴무</p>
+                    </div>
+                </div>
+
+                <div class="footer-policy">
+                    <h3>이용 및 정책</h3>
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-download">
+                    <h3>앱 다운로드</h3>
+                    <div class="footer-store-buttons">
+                        <a href="#" class="footer-store-btn">
+                            <img src="assets/image/apple.svg" alt="" aria-hidden="true">
+                            <span>App Store</span>
+                        </a>
+                        <a href="#" class="footer-store-btn">
+                            <img src="assets/image/google-play.svg" alt="" aria-hidden="true">
+                            <span>Google Play</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-company">
+                    (주)스테시스토리지 · 대표이사: 유승준 ·
+                    사업자등록번호: 177-45-71717 ·
+                    서울특별시 강남구 테헤란로 2027
+                </p>
+                <p class="footer-copyright">
+                    © 2027 STASH Inc. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script>
+        (function () {
+            // 상태 변수
+            let selectedType = null; // 'space' | 'garment'
+            let selectedPlan = null; // 'S', 'M', 'L', 'XL' | 'G30', 'G60', 'G100'
+            let selectedPlanData = null; // { name, desc, price }
+
+            // DOM 요소
+            const cardSpace = document.getElementById('card-space');
+            const cardGarment = document.getElementById('card-garment');
+            const sectionSpace = document.getElementById('section-space');
+            const sectionGarment = document.getElementById('section-garment');
+            const emptyGuide = document.getElementById('plan-empty-guide');
+            const summaryValue = document.getElementById('summary-value');
+            const summarySub = document.getElementById('summary-sub');
+            const consultForm = document.getElementById('consult-form');
+            const errorMsg = document.getElementById('form-error-msg');
+            const successView = document.getElementById('consult-success-view');
+
+            const custName = document.getElementById('cust-name');
+            const custPhone = document.getElementById('cust-phone');
+            const custRegion = document.getElementById('cust-region');
+            const custTiming = document.getElementById('cust-timing');
+            const custItems = document.getElementById('cust-items');
+            const privacyAgree = document.getElementById('privacy-agree');
+
+            // 전화번호 자동 하이픈 포맷팅
+            custPhone.addEventListener('input', function (e) {
+                let val = e.target.value.replace(/[^0-9]/g, '');
+                if (val.length > 11) val = val.slice(0, 11);
+
+                if (val.length > 7) {
+                    val = val.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+                } else if (val.length > 3) {
+                    val = val.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+                }
+                e.target.value = val;
+            });
+
+            // 서비스 타입 전환 함수
+            function setServiceType(type, targetPlan) {
+                selectedType = type;
+
+                // 탭 카드 상태 업데이트
+                cardSpace.classList.toggle('is-active', type === 'space');
+                cardGarment.classList.toggle('is-active', type === 'garment');
+
+                // 플랜 섹션 노출 업데이트
+                if (emptyGuide) emptyGuide.style.display = 'none';
+                sectionSpace.classList.toggle('is-visible', type === 'space');
+                sectionGarment.classList.toggle('is-visible', type === 'garment');
+
+                // 타입 변경 시 이전 타입의 선택 상태 초기화 (동일 타입 재클릭 제외)
+                const currentItems = document.querySelectorAll('.plan-item');
+                let foundPlan = false;
+
+                currentItems.forEach(function (item) {
+                    if (item.dataset.type === type && targetPlan && item.dataset.plan === targetPlan) {
+                        selectPlanItem(item);
+                        foundPlan = true;
+                    } else if (item.dataset.type !== type) {
+                        item.classList.remove('is-selected');
+                    }
+                });
+
+                if (!foundPlan && !targetPlan) {
+                    // 특정 플랜 지정이 없으면 선택 초기화 및 요약 UI 갱신
+                    selectedPlan = null;
+                    selectedPlanData = null;
+                    updateSummary();
+                }
+            }
+
+            // 개별 플랜 카드 선택 함수
+            function selectPlanItem(item) {
+                const type = item.dataset.type;
+                const plan = item.dataset.plan;
+
+                // 같은 섹션 내 모든 플랜 선택 해제
+                document.querySelectorAll('.plan-item').forEach(function (el) {
+                    el.classList.remove('is-selected');
+                });
+
+                item.classList.add('is-selected');
+                selectedPlan = plan;
+                selectedPlanData = {
+                    name: item.dataset.name,
+                    desc: item.dataset.desc,
+                    price: item.dataset.price
+                };
+
+                updateSummary();
+                hideError();
+            }
+
+            // 선택 요약 UI 갱신
+            function updateSummary() {
+                if (selectedType && selectedPlan && selectedPlanData) {
+                    summaryValue.textContent = selectedPlanData.name;
+                    summarySub.textContent = selectedPlanData.desc + ' · ' + selectedPlanData.price;
+                } else if (selectedType) {
+                    const typeName = selectedType === 'space' ? '공간 보관' : '의류 보관';
+                    summaryValue.textContent = typeName + ' (플랜을 선택해주세요)';
+                    summarySub.textContent = '아래 세부 플랜 중 원하시는 규격을 클릭해주세요.';
+                } else {
+                    summaryValue.textContent = '서비스 및 플랜을 선택해주세요';
+                    summarySub.textContent = '상단의 보관 방식을 선택하시면 플랜 정보가 표시됩니다.';
+                }
+            }
+
+            function showError(msg, targetInput) {
+                errorMsg.textContent = msg;
+                errorMsg.classList.add('is-visible');
+                if (targetInput) {
+                    targetInput.focus();
+                    targetInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            function hideError() {
+                errorMsg.classList.remove('is-visible');
+            }
+
+            // 이벤트 바인딩: 보관 방식 카드 클릭
+            cardSpace.addEventListener('click', function () {
+                setServiceType('space');
+            });
+
+            cardGarment.addEventListener('click', function () {
+                setServiceType('garment');
+            });
+
+            // 이벤트 바인딩: 플랜 카드 클릭
+            document.querySelectorAll('.plan-item').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    selectPlanItem(item);
+                });
+            });
+
+            // URL Parameter 자동 선택 로직
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramType = urlParams.get('type');
+            const paramPlan = urlParams.get('plan');
+
+            if (paramType === 'space') {
+                setServiceType('space', paramPlan || null);
+            } else if (paramType === 'garment') {
+                setServiceType('garment', paramPlan || null);
+            } else {
+                // 파라미터가 없으면 아무 플랜도 강제 선택하지 않음
+                updateSummary();
+            }
+
+            // 폼 제출 검증 및 완료 처리
+            consultForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                hideError();
+
+                // 1. 서비스 및 플랜 선택 검증
+                if (!selectedType) {
+                    showError('보관 방식(공간 보관 또는 의류 보관)을 선택해주세요.', cardSpace);
+                    return;
+                }
+                if (!selectedPlan) {
+                    showError('원하시는 세부 보관 플랜을 선택해주세요.', selectedType === 'space' ? sectionSpace : sectionGarment);
+                    return;
+                }
+
+                // 2. 고객 필수 정보 검증
+                const nameVal = custName.value.trim();
+                if (!nameVal) {
+                    showError('신청자 이름을 입력해주세요.', custName);
+                    return;
+                }
+
+                const phoneVal = custPhone.value.trim();
+                const phonePattern = /^01[0-9]-[0-9]{3,4}-[0-9]{4}$/;
+                if (!phoneVal) {
+                    showError('연락처를 입력해주세요.', custPhone);
+                    return;
+                }
+                if (!phonePattern.test(phoneVal)) {
+                    showError('올바른 휴대전화 번호 형식(010-0000-0000)을 입력해주세요.', custPhone);
+                    return;
+                }
+
+                const regionVal = custRegion.value.trim();
+                if (!regionVal) {
+                    showError('픽업 희망 지역을 입력해주세요.', custRegion);
+                    return;
+                }
+
+                const timingVal = custTiming.value;
+                if (!timingVal) {
+                    showError('픽업 희망 시기를 선택해주세요.', custTiming);
+                    return;
+                }
+
+                const itemsVal = custItems.value.trim();
+                if (!itemsVal) {
+                    showError('보관 예정 물품을 입력해주세요.', custItems);
+                    return;
+                }
+
+                // 3. 개인정보 수집 및 이용 동의
+                if (!privacyAgree.checked) {
+                    showError('개인정보 수집 및 이용에 동의해주세요.', privacyAgree);
+                    return;
+                }
+
+                // 4. 검증 통과 -> 완료 화면으로 전환 (정적 프론트엔드 모의 완료)
+                document.getElementById('result-service').textContent = selectedPlanData ? selectedPlanData.name : '-';
+                document.getElementById('result-name').textContent = nameVal;
+                document.getElementById('result-phone').textContent = phoneVal;
+                document.getElementById('result-region').textContent = regionVal;
+                document.getElementById('result-timing').textContent = timingVal;
+
+                consultForm.style.display = 'none';
+                successView.classList.add('is-visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+</html>
+
